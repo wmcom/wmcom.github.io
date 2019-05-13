@@ -5,8 +5,8 @@ function update_lp_links() {
 		return;
 	}
 
-	var lang = el.getAttribute('data-lang');
-	if (!lang) {
+	var load_from = el.getAttribute('data-load');
+	if (!load_from) {
 		return;
 	}
 
@@ -36,7 +36,7 @@ function update_lp_links() {
 	};
 
 	try {
-    	xhttp.open("GET", "/data/" + lang + "/lp-links.json", true);
+    	xhttp.open("GET", load_from, true);
 		xhttp.send();
 	} catch (err) {}
 
